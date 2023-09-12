@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=120:00:00
 #SBATCH --output=myjobresults-%J.out
-#SBATCH --job-name=cvjob
+#SBATCH --job-name=cifar10vit16-envsetup
 #SBATCH --gres=gpu:2
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user ta187904@ucf.edu
@@ -20,4 +20,4 @@ source ~/.bashrc
 
 conda update conda
 
-pip install requirements.txtcat
+pip install requirements.txt

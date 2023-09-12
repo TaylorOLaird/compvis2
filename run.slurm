@@ -5,7 +5,7 @@
 #SBATCH --time=30:00:00
 #SBATCH --error=myjobresults-%J.err
 #SBATCH --output=myjobresults-%J.out
-#SBATCH --job-name=resnet_assignment
+#SBATCH --job-name=cifar10vit16
 #SBATCH --gres=gpu:2
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user ta187904@ucf.edu
