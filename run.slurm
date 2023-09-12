@@ -20,7 +20,7 @@ module load gcc/gcc-9.1.0
 module load oneapi/mkl
 source ~/.bashrc
 
-conda activate env
+conda activate vitenv
 export LD_LIBRARY_PATH=/home/cap6411.student28/anaconda3/envs/env/lib
 
 cd /home/cap6411.student28/compvis2/
