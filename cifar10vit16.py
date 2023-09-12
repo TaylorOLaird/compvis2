@@ -2,6 +2,7 @@ import torch
 from transformers import ViTFeatureExtractor, ViTForImageClassification
 from PIL import Image
 import random
+from tqdm import tqdm
 
 
 # helper functions to get the data in a form I can use for inference
@@ -67,6 +68,27 @@ print(f"Predicted label: {predicted_label}")
 print(f"Ground truth label: {label_array[targets[test]]}")
 
 print(f"are they the same? {predicted_label == label_array[targets[test]]}")
+
+run_inference = True
+if run_inference:
+    # step 5: run inference on all the images
+    correct = 0
+    for i in tqdm(range(len(images_data)), desc="current image"):
+        image = images_data[i]
+        inputs = feature_extractor(images=image, return_tensors="pt")
+        outputs = model(**inputs)
+        logits = outputs.logits  # Get the logits (raw scores) from the model
+        probabilities = torch.nn.functional.softmax(logits, dim=-1)[0]
+
+        # Find the predicted class index with the highest probability
+        predicted_class = torch.argmax(probabilities).item()
+        predicted_label = label_array[predicted_class]
+
+        if predicted_label == label_array[targets[i]]:
+            correct += 1
+
+    print(f"Accuracy: {correct / len(images_data) * 100:.2f}%")
+
 
 # show the image
 image.show()
