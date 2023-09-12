@@ -14,7 +14,7 @@ def unpickle(file):
 
 
 def get_data():
-    label_names = unpickle('cifar-10-batches-py/batches.meta')
+    label_names = unpickle('../../../../groups/course.cap6411/cifar-10-batches-py/')
     labels = []
     for i in range(len(label_names[b'label_names'])):
         # strip the b' and ' from the label names
