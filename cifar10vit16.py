@@ -22,7 +22,7 @@ def get_data():
 
 
     # load the image data
-    data = unpickle('cifar-10-batches-py/data_batch_1')
+    data = unpickle('../../../../groups/course.cap6411/cifar-10-batches-py/data_batch_1')
     images_data = data[b'data']
     targets = data[b'labels']
 
