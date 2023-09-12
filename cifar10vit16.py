@@ -4,7 +4,7 @@ from PIL import Image
 import random
 from tqdm import tqdm
 
-print(f"starting scriptgi")
+print(f"starting script")
 
 # helper functions to get the data in a form I can use for inference
 def unpickle(file):
