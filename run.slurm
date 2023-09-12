@@ -23,5 +23,4 @@ source ~/.bashrc
 conda activate vitenv
 export LD_LIBRARY_PATH=/home/cap6411.student28/anaconda3/envs/env/lib
 
-cd ~/compvis2/
 python cifar10vit16.py
