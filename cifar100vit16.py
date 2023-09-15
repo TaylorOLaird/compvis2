@@ -23,7 +23,7 @@ def get_data():
     if IS_LOCAL:
         label_names = unpickle('./cifar-100-python/meta')
     else:
-        label_names = unpickle('../../../../../cifar-100-python/meta')
+        label_names = unpickle('../../../../../groups/course.cap6411/cifar-100-python/meta')
 
     label_names = label_names[b'fine_label_names']
     labels = []
@@ -35,7 +35,7 @@ def get_data():
     if IS_LOCAL:
         data = unpickle('./cifar-100-python/test')
     else:
-        data = unpickle('../../../../../cifar-100-python/test')
+        data = unpickle('../../../../../groups/course.cap6411/cifar-100-python/test')
 
     images_data = data[b'data']
     targets = data[b'fine_labels']
