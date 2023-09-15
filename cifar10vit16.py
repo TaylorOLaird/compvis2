@@ -3,6 +3,7 @@ from transformers import ViTFeatureExtractor, ViTForImageClassification
 from PIL import Image
 import random
 from tqdm import tqdm
+import pickle
 
 RUN_DEMO = True
 RUN_INFERENCE = False
@@ -13,7 +14,6 @@ print(f"starting script")
 
 # helper functions to get the data in a form I can use for inference
 def unpickle(file):
-    import pickle
     with open(file, 'rb') as fo:
         dict = pickle.load(fo, encoding='bytes')
     return dict
